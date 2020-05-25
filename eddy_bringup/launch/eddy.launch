@@ -1,0 +1,11 @@
+<launch>
+
+	<include file="$(find eddy_bringup)/launch/eddy_camera.launch"/>
+	
+	<include file="$(find eddy_bringup)/launch/eddy_gps.launch"/>
+	
+	<include file="$(find eddy_bringup)/launch/eddy_sonar.launch"/>
+	
+	<include file="$(find eddy_bringup)/launch/eddy_recorder.launch"/>
+
+</launch>

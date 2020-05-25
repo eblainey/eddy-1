@@ -1,0 +1,4 @@
+<launch>
+	<node name="rosbag_recorder" pkg="data_collection" type="rosbagger.py">
+	</node>
+</launch>

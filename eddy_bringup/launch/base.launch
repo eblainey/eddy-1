@@ -1,0 +1,3 @@
+<launch>
+	<include file="$(find eddy_bringup)/launch/eddy.launch"/>
+</launch>

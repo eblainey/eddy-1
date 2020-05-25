@@ -1,0 +1,7 @@
+<launch>
+	<node name="rosbag_recorder" pkg="data_collection" type="rosbagger.py">
+		<param name="bag_name" type="string" value="eddy"/>
+		<param name="data_directory" type="string" value="/home/Desktop"/>
+		<rosparam command="load" file="$(find eddy_bringup)/config/topics.yaml"/>
+	</node>
+</launch>

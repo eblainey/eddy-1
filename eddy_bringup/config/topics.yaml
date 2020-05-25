@@ -1,0 +1,9 @@
+topics:
+- "/eddy/gps/fix"
+- "/eddy/gps/time_reference"
+- "/eddy/gps/vel"
+- "/eddy/imu/accel"
+- "/eddy/imu/gravity"
+- "/eddy/imu/imu"
+- "/eddy/imu/magnetic_field"
+- "/eddy/camera/image_raw"

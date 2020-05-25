@@ -1,0 +1,11 @@
+<launch>
+	<group ns="eddy">
+		<group ns="camera">
+			<node pkg="uvc_camera" type="uvc_camera_node" name="underwater_camera">
+				<param name="fps" value="15"/>
+				<param name="width" value="640"/>
+				<param name="height" value="480"/>
+			</node>
+		</group>
+	</group>
+</launch>
