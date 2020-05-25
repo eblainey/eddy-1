@@ -8,19 +8,16 @@ features in extreme conditions.
 
 ## ROS Topics
 
-/eddy/gps/fix
-/eddy/gps/time_reference
-/eddy/gps/vel
-
-/eddy/imu/accel
-/eddy/imu/gravity
-/eddy/imu/imu
-/eddy/imu/magnetic_field
-
-/eddy/camera/image_raw
-/eddy/camera/camera_info
-/eddy/camera/compressed
-
-/eddy/sonar/history
-/eddy/sonar/profile
-/eddy/sonar/distance
+* /eddy/gps/fix - sensor_msgs/NatSatFix
+* /eddy/gps/time_reference - sensor_msgs/TimeReference
+* /eddy/gps/vel - geometry_msgs/TwistStamped
+* /eddy/imu/accel - geometry_msgs/Vector3Stamped
+* /eddy/imu/gravity - geometry_msgs/Vector3Stamped
+* /eddy/imu/imu - sensor_msgs/Imu
+* /eddy/imu/magnetic_field - sensor_msgs/MagneticField
+* /eddy/camera/image_raw - sensor_msgs/Image
+* /eddy/camera/camera_info - sensor_msgs/CameraInfo
+* /eddy/camera/compressed - sensor_msgs/CompressedImage
+* /eddy/sonar/history - sensor_msgs/Image
+* /eddy/sonar/profile - std_msgs/Float32MultiArray
+* /eddy/sonar/distance - sensor_msgs/Range
