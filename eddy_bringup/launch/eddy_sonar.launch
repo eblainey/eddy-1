@@ -1,8 +1,8 @@
 <launch>
 	<group ns="eddy">
 		<group ns="sonar">
-			<node name="ping_sonar" type="ping1d" pkg="bluerobotics_ping1d">
-				<param name="device" type="string" value="/dev/sonar"/>
+			<node name="ping_sonar" type="ping1d.py" pkg="bluerobotics_ping1d">
+				<param name="device" type="string" value="/dev/ttyUSB0"/>
 			</node>
 		</group>
 	</group>
