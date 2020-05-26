@@ -19,5 +19,5 @@ features in extreme conditions.
 * /eddy/camera/camera_info - sensor_msgs/CameraInfo
 * /eddy/camera/compressed - sensor_msgs/CompressedImage
 * /eddy/sonar/history - sensor_msgs/Image
-* /eddy/sonar/profile - std_msgs/Float32MultiArray
+* /eddy/sonar/profile - std_msgs/UInt8MultiArray
 * /eddy/sonar/distance - sensor_msgs/Range

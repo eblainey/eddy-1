@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import rospy, rosbag
 
@@ -12,19 +12,6 @@ import os
 from os import path
 from time import time
 from datetime import datetime
-
-def updateArgs(arg_defaults):
-	# Look up parameters starting in the node's private parameter space, but also search outer namespaces.
-	args = {}
-	for name, val in arg_defaults.iteritems():
-		full_name = rospy.search_param(name)
-		print "name ", name, full_name
-		if full_name is None:
-			args[name] = val
-		else:
-			args[name] = rospy.get_param(full_name, val)
-			print "We have args %s value %s" % (val, args[name])
-	return (args)
 
 class ROSBagger:
 	def __init__(self, bag_name, data_directory, topics, start_recording):
@@ -59,7 +46,7 @@ class ROSBagger:
 		file_name = path.join(self.data_directory, self.bag_name + '-'+timestamp+'.bag')
 		args = ["rosbag", "record", "-O", "__name:=eddy_recorder", file_name] + self.subscribed_topics
 		
-		subprocess.call(args)
+		subprocess.Popen(args)
 		self.rosbag_started = True
 		
 		self.status_pub.publish(Bool(True))
@@ -88,7 +75,7 @@ def main(args):
 	arg_defaults = {
 		'bag_name' : "test",
 		'topics' : [
-			"/rosout"
+			"-a"
 		],
 		'data_directory' : '/home/Desktop',
 		'start_recording' : False
@@ -99,8 +86,21 @@ def main(args):
 	
 	try:
 		rospy.spin()
-	except rospy.ROSInterruptException, e:
-		print e
+	except rospy.ROSInterruptException as e:
+		rospy.logerror(e)
+
+def updateArgs(arg_defaults):
+	# Look up parameters starting in the node's private parameter space, but also search outer namespaces.
+	args = {}
+	for name, val in arg_defaults.items():
+		full_name = rospy.search_param(name)
+		rospy.loginfo("name %s, %s" % (name, full_name))
+		if full_name is None:
+			args[name] = val
+		else:
+			args[name] = rospy.get_param(full_name, val)
+			rospy.loginfo("We have args %s value %s" % (val, args[name]))
+	return (args)
 
 if __name__ == '__main__':
 	main(sys.argv)

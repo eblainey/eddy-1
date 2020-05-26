@@ -1,4 +1,7 @@
 topics:
+- "/eddy/sonar/profile"
+- "/eddy/sonar/history"
+- "/eddy/sonar/distance"
 - "/eddy/gps/fix"
 - "/eddy/gps/time_reference"
 - "/eddy/gps/vel"

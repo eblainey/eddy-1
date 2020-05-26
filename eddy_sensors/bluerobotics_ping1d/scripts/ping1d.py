@@ -1,16 +1,19 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
+
+import sys
 
 ### ROS imports
 
 import rospy
 from sensor_msgs.msg import Image, Range
-from std_msgs.msg import Float32MultiArray
+from std_msgs.msg import UInt8MultiArray
 from cv_bridge import CvBridge, CvBridgeError
 
 ### OpenCV imports
 
 import cv2
 import numpy as np
+from scipy import ndimage
 
 ### BlueRobotics imports
 
@@ -25,7 +28,7 @@ class Sonar:
 		self.ping = Ping1D()
 		
 		if device is not None:
-			self.ping.set_connect_serial(device)
+			self.ping.connect_serial(device, 115200)
 		
 		if self.ping.initialize() is False:
 			rospy.logerror("Ping Sonar failed to initialize")
@@ -41,10 +44,10 @@ class Sonar:
 		self.ping_rate = 1000 / int(data["ping_interval"])
 		
 		self.history_pub = rospy.Publisher('history', Image, queue_size=3)
-		self.profile_pub = rospy.Publisher('profile', Float32MultiArray, queue_size=3)
+		self.profile_pub = rospy.Publisher('profile', UInt8MultiArray, queue_size=3)
 		self.distance_pub = rospy.Publisher('distance', Range, queue_size=3)
 		
-		self.history = Sonar.MAX_HISTORY*[SONAR.MAX_RESOLUTION*[0.0]]
+		self.history = Sonar.MAX_HISTORY*[Sonar.MAX_RESOLUTION*[0.0]]
 		
 		self.bridge = CvBridge()
 		pass
@@ -54,9 +57,9 @@ class Sonar:
 		while not rospy.is_shutdown():
 			time, data = rospy.Time.now(), self.ping.get_profile()
 			
-			self.publish_history_data(data, time)
-			self.publish_profile_data(data, time)
-			self.publish_distance_data(data, time)
+			self.publish_history_data(time, data)
+			self.publish_profile_data(time, data)
+			self.publish_distance_data(time, data)
 			
 			rate.sleep()
 			pass
@@ -64,25 +67,26 @@ class Sonar:
 	
 	def publish_history_data(self, time, data):
 		
-		self.history.append(data["profile_data"])
+		self.history.append([x for x in data["profile_data"]])
 		self.history.pop(0)
 		
-		hue_image = np.array(self.history)
-		np.transpose(hue_image)
-		saturation_image = np.ones(MAX_RESOLUTION, MAX_HISTORY)
-		value_image = np.ones(MAX_RESOLUTION, MAX_HISTORY)
+		hsv_image = np.zeros((Sonar.MAX_RESOLUTION, Sonar.MAX_HISTORY,3), np.uint8)
+		hsv_image[:,:,0] = np.array(self.history, np.uint8)
+		hsv_image[:,:,1] = 255
+		hsv_image[:,:,2] = 255
 		
-		hsvimg = cv2.merge(hue_image, saturation_image, value_image)
-		bgrimage = cv2.cvtColor(hsvimg, cv2.COLOR_HSV2BGR)
+		hsv_image = ndimage.rotate(hsv_image, -90)
+		 
+		bgr_image = cv2.cvtColor(hsv_image, cv2.COLOR_HSV2BGR)
 		
 		try:
-			self.history_pub.publish(self.bridge.cv2_to_imgmsg(cv_image, "bgr8"))
+			self.history_pub.publish(self.bridge.cv2_to_imgmsg(bgr_image, "bgr8"))
 		except CvBridgeError as e:
 			print(e)
 		pass
 	
 	def publish_profile_data(self, time, data):
-		self.profile_pub.publish(Float32MultiArray(data=data["profile_data"]))
+		self.profile_pub.publish(UInt8MultiArray(data=[x for x in data["profile_data"]]))
 		pass
 	
 	def publish_distance_data(self, time, data):
@@ -114,20 +118,20 @@ def main(args):
 	
 	try:
 		sonar.spin()
-	except rospy.ROSInterruptException, e:
-		print e
+	except rospy.ROSInterruptException as e:
+		rospy.logerror(e)
 
 def updateArgs(arg_defaults):
 	# Look up parameters starting in the node's private parameter space, but also search outer namespaces.
 	args = {}
-	for name, val in arg_defaults.iteritems():
+	for name, val in arg_defaults.items():
 		full_name = rospy.search_param(name)
-		print "name ", name, full_name
+		rospy.loginfo("name %s, %s" % (name, full_name))
 		if full_name is None:
 			args[name] = val
 		else:
 			args[name] = rospy.get_param(full_name, val)
-			print "We have args " + val + " value " + args[name]
+			rospy.loginfo("We have args %s value %s" % (val, args[name]))
 	return (args)
 
 if __name__ == '__main__':
