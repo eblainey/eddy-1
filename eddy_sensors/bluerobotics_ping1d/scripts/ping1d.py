@@ -19,6 +19,12 @@ from scipy import ndimage
 
 from brping import Ping1D
 
+def scale(val, src, dst):
+    """
+    Scale the given value from the scale of src to the scale of dst.
+    """
+    return int(((val - src[0]) / (src[1]-src[0])) * (dst[1]-dst[0]) + dst[0])
+
 class Sonar:
 
 	MAX_RESOLUTION = 200
@@ -67,7 +73,7 @@ class Sonar:
 	
 	def publish_history_data(self, time, data):
 		
-		self.history.append([x for x in data["profile_data"]])
+		self.history.append([scale(x, (0,255), (120, 0)) for x in data["profile_data"]])
 		self.history.pop(0)
 		
 		hsv_image = np.zeros((Sonar.MAX_RESOLUTION, Sonar.MAX_HISTORY,3), np.uint8)
