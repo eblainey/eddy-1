@@ -21,3 +21,15 @@ features in extreme conditions.
 * /eddy/sonar/history - sensor_msgs/Image
 * /eddy/sonar/profile - std_msgs/UInt8MultiArray
 * /eddy/sonar/distance - sensor_msgs/Range
+
+* /eddy/cmd_vel - geometry_msgs/Twist
+* /eddy/cmd_thrust - geometry_msgs/Wrench
+* /eddy/joystick - sensor_msgs/Joy
+* /eddy/status/buzzer - std_msgs/Bool
+* /eddy/status/led/rosbag - std_msgs/ColorRGBA
+* /eddy/status/led/controller - std_msgs/ColorRGBA
+* /eddy/status/led/sonar - std_msgs/ColorRGBA
+* /eddy/status/led/gps - std_msgs/ColorRGBA
+* /eddy/status/led/camera - std_msgs/ColorRGBA
+
+
