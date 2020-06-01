@@ -165,7 +165,7 @@ def Controller:
 
 def main(args):
 	# Initialize the node
-	rospy.init_node('sonar', anonymous=False)
+	rospy.init_node('base_controller', anonymous=False)
 
 	arg_defaults = {
 		"max_forward_vel" : 2.0,
