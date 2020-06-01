@@ -38,3 +38,39 @@
 
    
 
+## Electronics:
+
+1. Power Distribution Board
+
+   [http://www.mateksys.com/?portfolio=f722-se]: 
+
+   
+
+2. Piezo Buzzer
+
+   [http://www.mateksys.com/?portfolio=dbuz5v]: 
+
+   
+
+3. Lumen Subsea Light for ROV/AUV
+
+   [https://bluerobotics.com/store/thrusters/lights/lumen-r2-rp/]: 
+
+   
+
+4. DC-DC voltage regulator
+
+5. Wi-Fi hub
+
+6. Teensy 4.0
+
+7. O-LED screen
+
+8. Oseep Voltage sensor
+
+9. Switch 
+
+10. Toggle Switch
+
+11. 3 x Battery
+
