@@ -48,15 +48,12 @@
 
 2. Piezo Buzzer
 
-   [http://www.mateksys.com/?portfolio=dbuz5v]: 
+   [https://www.adafruit.com/product/1536]: 
 
-   
 
 3. Lumen Subsea Light for ROV/AUV
 
    [https://bluerobotics.com/store/thrusters/lights/lumen-r2-rp/]: 
-
-   
 
 4. DC-DC voltage regulator
 
@@ -64,13 +61,21 @@
 
 6. Teensy 4.0
 
+	[https://www.adafruit.com/product/4323]
+
 7. O-LED screen
 
-8. Oseep Voltage sensor
+	[https://www.adafruit.com/product/931]
 
-9. Switch 
+8. LED
 
-10. Toggle Switch
+	[https://www.adafruit.com/product/2343]
 
-11. 3 x Battery
+9. Oseep Voltage sensor
+
+10. Switch 
+
+11. Toggle Switch
+
+12. 3 x Battery
 
