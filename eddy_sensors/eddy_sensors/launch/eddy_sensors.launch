@@ -1,0 +1,14 @@
+<launch>
+	
+	<!-- Initialize the gps sensor -->
+	<include file="$(find eddy_sensors)/launch/eddy_gps.launch"/>
+	
+	<!-- Initialize the IMU sensor (TBD) -->
+	
+	<!-- Initialize the underwater sonar -->
+	<include file="$(find eddy_sensors)/launch/eddy_sonar.launch"/>
+	
+	<!-- Initialize the underwater low light camera -->
+	<include file="$(find eddy_sensors)/launch/eddy_camera.launch"/>
+	
+</launch>

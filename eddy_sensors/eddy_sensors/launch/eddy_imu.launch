@@ -1,0 +1,17 @@
+<launch>
+	<group ns="eddy">
+		<group ns="imu">
+			
+			<!-- TBD - node to capture raw data from the onboard IMU  -->
+			<!-- the current GPS module (Reach M+) only supports IMU data via a -->
+			<!-- hack that exposes the MPU9020 data using a non-standard NMEA   -->
+			<!-- message on the serial port.                                    -->
+			
+			<!-- filter raw IMU data into a stable orientation measurement -->
+			<node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_madgwick">
+				<param name="world_frame" value="enu"/>
+				<param name="publish_tf" value="false"/>
+			</node>
+		</group>
+	</group>
+</launch>

@@ -1,0 +1,22 @@
+<launch>
+	<group ns="eddy">
+		<group ns="gps">
+			
+			<!-- publish all NMEA messages from the GPS module to the ros core -->
+			<node pkg="nmea_navsat_driver" type="nmea_topic_serial_reader" name="nmea_topic_serial_reader">
+				<param name="port" type="string" value="/dev/gps"/>
+				<param name="baud" type="int" value="9600"/>
+			</node>
+			
+			<!-- Convert NMEA messages into standard ROS GPS topics -- fix, vel, time_reference -->
+			<node pkg="nmea_navsat_driver" type="nmea_topic_driver" name="nmea_topic_driver"/>
+			
+			<!-- Old code - hanging onto it for a bit 
+			<node name="ublox_gps" type="nmea_serial_driver" pkg="nmea_navsat_driver">
+				<param name="port" type="string" value="/dev/ublox-gps"/>
+				<param name="baud" type="int" value="9600"/>
+			</node>
+			-->
+		</group>
+	</group>
+</launch>
