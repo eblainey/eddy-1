@@ -2,9 +2,9 @@
 	<group ns="eddy">
 		<group ns="gps">
 			<!-- publish all NMEA messages from the GPS module to the ros core -->
-			<node pkg="nmea_navsat_driver" type="nmea_topic_serial_reader" name="gps">
+			<node pkg="nmea_navsat_driver" type="nmea_serial_driver" name="gps">
 				<param name="port" type="string" value="/dev/gps"/>
-				<param name="baud" type="int" value="115200"/>
+				<param name="baud" type="int" value="9600"/>
 			</node>
 		</group>
 	</group>
