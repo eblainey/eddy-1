@@ -8,9 +8,9 @@ project(eddy_teleop)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  geometery_msgs
+  geometry_msgs
   rospy
-  sensors_msgs
+  sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -70,7 +70,7 @@ find_package(catkin REQUIRED COMPONENTS
 ## Generate added messages and services with any dependencies listed here
 # generate_messages(
 #   DEPENDENCIES
-#   geometery_msgs#   sensors_msgs
+#   geometry_msgs#   sensor_msgs
 # )
 
 ################################################
@@ -105,7 +105,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES eddy_teleop
-#  CATKIN_DEPENDS geometery_msgs rospy sensors_msgs
+#  CATKIN_DEPENDS geometry_msgs rospy sensor_msgs
 #  DEPENDS system_lib
 )
 
