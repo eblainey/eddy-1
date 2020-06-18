@@ -1,0 +1,6 @@
+1. rosbag
+	will not import into the python3 console bc of cryptodome error
+	python 2 import but then >>No such file or directory: 'eddy-realpool-2020-05-27-05-40-49.bag'
+2. brping 
+	installed, can't import into any python console
+	ModuleNotFoundError: No module named 'brping'
