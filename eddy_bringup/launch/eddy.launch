@@ -1,7 +1,7 @@
 <launch>
 	
 	<!-- Launch all sensors currently configured on the eddy robotic ASV platform -->
-	<include file="$(find eddy_sensors)/launch/eddy_sensors.launch"/>
+	<include file="$(find eddy_bringup)/launch/eddy_sensors.launch"/>
 	
 	<!-- Launch the ROSBag recording service -->
 	<include file="$(find eddy_bringup)/launch/eddy_recorder.launch"/>
