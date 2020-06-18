@@ -1,6 +1,14 @@
 1. rosbag
 	will not import into the python3 console bc of cryptodome error
+	
 	python 2 import but then >>No such file or directory: 'eddy-realpool-2020-05-27-05-40-49.bag'
 2. brping 
 	installed, can't import into any python console
 	ModuleNotFoundError: No module named 'brping'
+3.launch files don't launch 
+	in the right pwd 
+	catkin_made
+	source setup.bash 
+4.teleop node 
+	had problem with catkin_make (it could not find the msgs paths, I added cmake_prefix_path but it still did not work)--> i commented out the msg dependencies so catkin_make would catkin_make
+	-->after this some packages were broken so i fixed them with --configure --pending
