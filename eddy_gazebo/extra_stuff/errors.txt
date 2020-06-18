@@ -1,10 +1,16 @@
 1. rosbag
-	will not import into the python3 console bc of cryptodome error
-	
-	python 2 import but then >>No such file or directory: 'eddy-realpool-2020-05-27-05-40-49.bag'
-2. brping 
-	installed, can't import into any python console
-	ModuleNotFoundError: No module named 'brping'
+	Python 3.6.9 (default, Apr 18 2020, 01:56:04) 
+	[GCC 8.4.0] on linux
+	Type "help", "copyright", "credits" or "license" for more information.
+	>>> import rosbag
+	Traceback (most recent call last):
+	  File "<stdin>", line 1, in <module>
+	  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosbag/__init__.py", line 33, in <module>
+	    from .bag import Bag, Compression, ROSBagException, ROSBagFormatException, ROSBagUnindexedException
+	  File "/opt/ros/melodic/lib/python2.7/dist-packages/rosbag/bag.py", line 53, in <module>
+	    from Cryptodome.Cipher import AES
+	ModuleNotFoundError: No module named 'Cryptodome'
+
 3.launch files don't launch 
 	in the right pwd 
 	catkin_made
