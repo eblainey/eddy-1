@@ -1,0 +1,171 @@
+ 1167  install ros--geometry-msgs to fix it
+ 1168  install ros--geometry-msgs
+ 1169  sudo apt-get install ros-melodic-geometry-msgs
+ 1170  catkin_make
+ 1171  rospack find geometry_msgs
+ 1172  souce devel/setup.bash
+ 1173  source devel/setup.bash
+ 1174  catkin_make
+ 1175  catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+ 1176  catkin_make
+ 1177  roslaunch eddy_teleop
+ 1178  roslaunch eddy_teleop teleop.py
+ 1179  chmod u+x teleop.py
+ 1180  cd src
+ 1181  cd eddy
+ 1182  cd eddy_teleop/
+ 1183  chmod u+x teleop.py
+ 1184  nano CMakeLists.txt 
+ 1185  nano eddy.launch
+ 1186  roslaunch eddy_gazebo eddy.launch
+
+-made a new ws
+ 1187  export ROS_PACKAGE_PATH=/opt/ros/melodic/share/ros-pkg:/home/ubuntu/simulation_ws/src
+ 1188  roslaunch eddy_gazebo eddy.launch
+ 1189  rospack find eddy_gazebo
+ 1190  source /home/ubuntu/simulation_ws/devel/setup.bash
+ 1191  rospack find eddy_gazebo
+ 1192  roslaunch eddy_gazebo eddy.launch
+ 1193  export ROS_PACKAGE_PATH=/opt/ros/melodic/share/ros-pkg:/home/ubuntu/simulation_ws/src/eddy/
+ 1194  roslaunch eddy_gazebo eddy.launch
+ 1195  source devel/setup.bash
+ 1196  ~/simulation_ws/
+ 1197  cd ~/simulation_ws/
+ 1198  source devel/setup.bash
+ 1199  nano eddy.launch
+ 1200  rospack find eddy_sim
+ 1201  roslaunch eddy_sim eddy.launch
+ 1202  nano eddy_recorder.launch 
+ 1203  roslaunch eddy_sim eddy.launch
+ 1204  roslaunch eddy_sim eddy_lake.launch
+ 1205  nano CMakeLists.txt rospack find eddy_sim
+ 1206  roslaunch eddy_gazebo eddy.launch
+ 1207  roslaunch eddy eddy.launch 
+ 1208  roslaunch eddy /eddy/eddy_bringup/launch/eddt.launch
+ 1209  roslaunch eddy /eddy/eddy_bringup/launch/eddy.launch
+ 1210  roslaunch eddy eddy_bringup/launch/eddy.launch
+ 1211  roslaunch eddy /eddy_bringup/launch/eddy.launch
+ 1212  history
+ 1213  catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+ 1214  catkin_make geometry_msgs_DIR=opt/ros/melodic/share/geometry_msgs
+ 1215  ubuntu@eddy-shore-station:~/catkin_ws$ 
+ 1216  catkin_make geometry_msgs_DIR=opt/ros/melodic/share/geometry_msgs
+ 1217  cmake_policy
+ 1218  catkin_make geometry_msgs_DIR=opt/ros/melodic/share/geometry_msgs
+ 1219  source /opt/ros/melodic/setup.bash
+ 1220  catkin_make 
+ 1221  catkin_make -DCMAKE_PREFIX_PATH==/opt/ros/melodic/share/geometry_msgs
+ 1222  catkin_make -DCMAKE_PREFIX_PATH=/opt/ros/melodic/share/geometry_msgs
+ 1223  export geometery_msgs_DIR=/opt/ros/melodic/share/geometry_msgs
+ 1224  catkin_make
+ 1225  nano CMakeLists.txt 
+ 
+ -went back to catkin 
+ 1226  roscore
+ 1227  cd ~/catkin_ws
+ 1228  roscore
+ 1229  history
+ 1230  export CMAKE_PREFIX_PATH=/opt/ros/melodic/share/geometry_msgs
+ 1231  history
+ 1232  catkin_make
+ 1233  roscore
+ 1234  cd
+ 1235  roscore
+ 1236  rosnode
+ 1237  rosnode list
+ 1238  export ROS_UBUNTU=localhost
+ 1239  roscore
+ 1240  export ROS_HOSTNAME=eddy-shore-station
+ 1241  roscore
+ 1242  cd src
+ 1243  roslaunch eddy/eddy_bringup/
+ 1244  roslaunch eddy/eddy_bringup/launch/ base.launch
+ 1245  cd eddy
+ 1246  cd teleop
+ 1247  cd eddy_teleop
+ 1248  nano CMakeLists.txt
+ 1249  cd ~/catkin_ws
+ 1250  catkin_make
+ 1251  cd simulation_ws/src/camera_sim
+ 1252  catkin_make
+ 1253  rospack find geometry_msgs
+ 1254  export CMAKE_PREFIX_PATH=/opt/ros/melodic/share/geometry_msgs
+ 1255  catkin_make
+ 1256  locate  geometery_msgsConfig.cmake
+ 1257  locate -i .cmake
+ 1258  catkin_make
+ 1259  history
+ 1260  nanano CMakeLists
+ 1261  nano CMakeLists.txt
+ 1262  chomd +x teleop.py
+ 1263  chmod +x teleop.py
+ 1264  nano CMakeLists.txt
+ 1265  nano CMakeLists.txt
+ 1266  nano CMakeLists.txt 
+ 1267  nano package.xml 
+ 1268  nano CMakeLists.txt 
+ 1269  roscore
+ 1270  roslaunch gazebo_roslake.launch headless:=true gui:=false
+ 1271  roscore
+ 
+ 
+
+ 1272  nano eddy.xacro
+ 1273  nano empty_lake.world 
+ 1274  sudo apt install rospack-tools
+ 1275  roscore
+ 1276  sudo apt install python-roslaunch
+ 1277  roscore
+ 1278  nano .bashrc
+ 1279  nano ~.bashrc
+ 1280  locate -i *.bashrc
+ 1281  nano /home/ubuntu/.bashrc
+ 1282  sudo apt update --fix-missing
+ 1283  sudo apt install -f
+ 1284  sudo dpkg -l | grep ^..r
+ 1285  sudo dpkg --remove --force -remove --reinstreq
+ 1286  sudo dpkg --remove --force-remove --reinstreq
+ 1287  dpkg --force-help
+ 1288  sudo dpkg --remove --force-remove-reinstreq
+ 1289  sudo dpkg --configure -a
+ 1290  sudo dpkg -l | grep ^..r
+ 1291  sudo dpkg --remove --force-remove-rienstreq
+ 1292  sudo dpkg --remove --force-remove --rienstreq
+ 1293  dpkg --force-help
+ 1294  history
+ 1295  roscore
+ 1296  locate -i *.sdf
+ 1297  roscore
+ 1298  source ~/catkin_ws/src/turtlebot_simulator
+
+  
+ 1299  roslaunch eddy_gazebo eddy.launch
+ 1300  source ~/catkin_ws/devel/setup.bash
+ 1301  source /opt/ros/melodic/setup.bash
+ 1302  roslaunch eddy_gazebo eddy.launch
+ 1303  rospack find eddy_gazebo
+ 1304  source /home/ubuntu/catkin_ws/devel/setup.bash
+ 1305  rospack find eddy_gazebo
+ 1306  source devel/setup.bash
+ 1307  rospack find eddy_gazebo
+ 1308  python3
+ 1309  sudo apt install rosbag
+ 1310  python3
+ 1311  python -m Crypto.SelfTest  ##^C bc it was taking really long, didn't feel right.
+ 1312  sudo apt-get install build-essential python3-dev
+ 1313  python
+ 1314  cd
+ 1315  pip install pycryptodome
+ 1316  python3
+ 1317  cd ~/catkin_ws/src/eddy/eddy_gazebo
+ 1318  ls
+ 1319  cd cd eddy_sim_scripts/
+ 1320  cd eddy_sim_scripts/
+ 1321  ls
+ 1322  nano bag_processing.py
+ 1323  nano 
+ 1324  nano bag_processing.py 
+
+
+
+
