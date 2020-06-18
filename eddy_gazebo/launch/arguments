@@ -1,0 +1,2 @@
+headless, gui:= true or false
+world:= a world file
