@@ -1,0 +1,239 @@
+ 1316  python3
+ 1317  cd ~/catkin_ws/src/eddy/eddy_gazebo
+ 1318  ls
+ 1319  cd cd eddy_sim_scripts/
+ 1320  cd eddy_sim_scripts/
+ 1321  ls
+ 1322  nano bag_processing.py
+ 1323  nano 
+ 1324  nano bag_processing.py 
+ 1325  rqt_plot /eddy/sonar/distance
+ 1326  bag = rosbag.Bag('eddy.bag', 'r')
+ 1327  history
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_gazebo/eddy_sim_scripts$ cd
+ubuntu@eddy-shore-station:~$ catkin_make
+Base path: /home/ubuntu
+The specified source space "/home/ubuntu/src" does not exist
+ubuntu@eddy-shore-station:~$ cd ~/catkin_make
+bash: cd: /home/ubuntu/catkin_make: No such file or directory
+ubuntu@eddy-shore-station:~$ ls
+Desktop    Downloads  Pictures  Templates  catkin_ws  kingfisher_description  octave       qt-creator  rechos_description  turtlebot3       turtlebot3_simulations
+Documents  Music      Public    Videos     eddy_maps  kingfisher_gazebo       params.yaml  rechos      resources           turtlebot3_msgs  uuv_simulator
+ubuntu@eddy-shore-station:~$ cd catkin_ws
+ubuntu@eddy-shore-station:~/catkin_ws$ catkin_make
+Base path: /home/ubuntu/catkin_ws
+Source space: /home/ubuntu/catkin_ws/src
+Build space: /home/ubuntu/catkin_ws/build
+Devel space: /home/ubuntu/catkin_ws/devel
+Install space: /home/ubuntu/catkin_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/ubuntu/catkin_ws/build"
+####
+####
+#### Running command: "make -j4 -l4" in "/home/ubuntu/catkin_ws/build"
+####
+Built target eddy_description_xacro_generated_to_devel_space_
+ubuntu@eddy-shore-station:~/catkin_ws$ source ~/catkin/devel/setup.bash
+bash: /home/ubuntu/catkin/devel/setup.bash: No such file or directory
+ubuntu@eddy-shore-station:~/catkin_ws$ source ~/catki_ws/devel/setup.bash
+bash: /home/ubuntu/catki_ws/devel/setup.bash: No such file or directory
+ubuntu@eddy-shore-station:~/catkin_ws$ source ~/catkin_ws/devel/setup.bash
+ubuntu@eddy-shore-station:~/catkin_ws$ rospack find eddy_gazebo
+[rospack] Error: package 'eddy_gazebo' not found
+ubuntu@eddy-shore-station:~/catkin_ws$ rospack find eddy_bringup
+[rospack] Error: package 'eddy_bringup' not found
+ubuntu@eddy-shore-station:~/catkin_ws$ ls
+build  devel  frames.gv  frames.pdf  gazebo_ros_pkgs  launch  plotsampledata.py  pyqtgraph.ui  src  uuv_simulator
+ubuntu@eddy-shore-station:~/catkin_ws$ cd src
+ubuntu@eddy-shore-station:~/catkin_ws/src$ ls
+ CMakeLists.txt   eddy-realpool-2020-05-27-05-40-49-image_view-parameter_descriptions.csv   learning_tf      'ping viewer.desktop'   urdf_sim_tutorial
+ eddy             jenkin_test                                                               my_awesome_code   turtlebot_simulator
+ubuntu@eddy-shore-station:~/catkin_ws/src$ cd eddy
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy$ ls
+LICENSE  README.md  eddy  eddy_bringup  eddy_controller  eddy_description  eddy_gazebo  eddy_sensors  eddy_teleop  eddy_utilities
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy$ chmod +x eddy_bringup
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy$ ls
+LICENSE  README.md  eddy  eddy_bringup  eddy_controller  eddy_description  eddy_gazebo  eddy_sensors  eddy_teleop  eddy_utilities
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy$ cd eddy_bringup
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup$ ls
+CMakeLists.txt  config  launch  package.xml  reach  setup  teensy  udev
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup$ ls
+CMakeLists.txt  config  launch  package.xml  reach  setup  teensy  udev
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup$ cd launch
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ ls
+base.launch  eddy.launch  eddy_recorder.launch
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ chmod +x eddy.launch
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ ls
+base.launch  eddy.launch  eddy_recorder.launch
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy_bringup eddy.launch
+
+Command 'roslaunch' not found, but can be installed with:
+
+sudo apt install python-roslaunch
+
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ source /opt/ros/melodic/setup.bash
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy_bringup eddy.launch
+RLException: [eddy.launch] is neither a launch file in package [eddy_bringup] nor is [eddy_bringup] a launch file name
+The traceback for the exception was written to the log file
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch 
+Display all 232 possibilities? (y or n)
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy
+eddy.launch           eddy_recorder.launch  
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy
+eddy.launch           eddy_recorder.launch  
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy
+eddy.launch           eddy_recorder.launch  
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ ls
+base.launch  eddy.launch  eddy_recorder.launch
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ roslaunch eddy.launch
+... logging to /home/ubuntu/.ros/log/dfeecef2-b172-11ea-ba06-dca6324af18c/roslaunch-eddy-shore-station-31473.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+
+Resource not found: eddy_sensors
+ROS path [0]=/opt/ros/melodic/share/ros
+ROS path [1]=/opt/ros/melodic/share
+The traceback for the exception was written to the log file
+ubuntu@eddy-shore-station:~/catkin_ws/src/eddy/eddy_bringup/launch$ cd ~/catkin_ws/
+ubuntu@eddy-shore-station:~/catkin_ws$ rospack find eddy_bringup
+[rospack] Error: package 'eddy_bringup' not found
+ubuntu@eddy-shore-station:~/catkin_ws$ source ~/catkin_ws/devel/setup.bash
+ubuntu@eddy-shore-station:~/catkin_ws$ rospack find eddy_bringup
+[rospack] Error: package 'eddy_bringup' not found
+ubuntu@eddy-shore-station:~/catkin_ws$ source devel/setup.bash rospack profile
+ubuntu@eddy-shore-station:~/catkin_ws$ rospack find eddy_bringup
+[rospack] Error: package 'eddy_bringup' not found
+ubuntu@eddy-shore-station:~/catkin_ws$ roscd eddy_bringup
+^[[Aroscd: No such package/stack 'eddy_bringup'
+ubuntu@eddy-shore-station:~/catkin_ws$ catkin_make
+
+Command 'catkin_make' not found, but can be installed with:
+
+sudo apt install catkin
+
+ubuntu@eddy-shore-station:~/catkin_ws$ source /opt/ros/melodic/setup.bash
+ubuntu@eddy-shore-station:~/catkin_ws$ catkin_make
+Base path: /home/ubuntu/catkin_ws
+Source space: /home/ubuntu/catkin_ws/src
+Build space: /home/ubuntu/catkin_ws/build
+Devel space: /home/ubuntu/catkin_ws/devel
+Install space: /home/ubuntu/catkin_ws/install
+####
+#### Running command: "cmake /home/ubuntu/catkin_ws/src -DCATKIN_DEVEL_PREFIX=/home/ubuntu/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/catkin_ws/install -G Unix Makefiles" in "/home/ubuntu/catkin_ws/build"
+####
+-- The C compiler identification is GNU 7.5.0
+-- The CXX compiler identification is GNU 7.5.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Using CATKIN_DEVEL_PREFIX: /home/ubuntu/catkin_ws/devel
+-- Using CMAKE_PREFIX_PATH: /opt/ros/melodic;/opt/ros/melodic/share/geometry_msgs
+-- This workspace overlays: /opt/ros/melodic
+-- Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.17", minimum required is "2") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python2
+-- Using Debian Python package layout
+-- Using empy: /usr/bin/empy
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/ubuntu/catkin_ws/build/test_results
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python2 (found version "2.7.17") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Using Python nosetests: /usr/bin/nosetests-2.7
+-- catkin 0.7.26
+-- BUILD_SHARED_LIBS is on
+-- BUILD_SHARED_LIBS is on
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- ~~  traversing 19 packages in topological order:
+-- ~~  - bluerobotics_ping1d
+-- ~~  - eddy (metapackage)
+-- ~~  - eddy_controller
+-- ~~  - eddy_gazebo
+-- ~~  - eddy_sensors (metapackage)
+-- ~~  - eddy_utilities (metapackage)
+-- ~~  - status_monitor
+-- ~~  - turtlebot_gazebo
+-- ~~  - turtlebot_simulator (metapackage)
+-- ~~  - turtlebot_stage
+-- ~~  - turtlebot_stdr
+-- ~~  - urdf_sim_tutorial
+-- ~~  - eddy_bringup
+-- ~~  - eddy_teleop
+-- ~~  - jenkin_test
+-- ~~  - my_awesome_code
+-- ~~  - data_collection
+-- ~~  - learning_tf
+-- ~~  - eddy_description
+-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-- +++ processing catkin package: 'bluerobotics_ping1d'
+-- ==> add_subdirectory(eddy/eddy_sensors/bluerobotics_ping1d)
+-- +++ processing catkin metapackage: 'eddy'
+-- ==> add_subdirectory(eddy/eddy)
+-- +++ processing catkin package: 'eddy_controller'
+-- ==> add_subdirectory(eddy/eddy_controller)
+-- +++ processing catkin package: 'eddy_gazebo'
+-- ==> add_subdirectory(eddy/eddy_gazebo)
+-- +++ processing catkin metapackage: 'eddy_sensors'
+-- ==> add_subdirectory(eddy/eddy_sensors/eddy_sensors)
+-- +++ processing catkin metapackage: 'eddy_utilities'
+-- ==> add_subdirectory(eddy/eddy_utilities/eddy_utilities)
+-- +++ processing catkin package: 'status_monitor'
+-- ==> add_subdirectory(eddy/eddy_utilities/status_monitor)
+-- +++ processing catkin package: 'turtlebot_gazebo'
+-- ==> add_subdirectory(turtlebot_simulator/turtlebot_gazebo)
+-- +++ processing catkin metapackage: 'turtlebot_simulator'
+-- ==> add_subdirectory(turtlebot_simulator/turtlebot_simulator)
+-- +++ processing catkin package: 'turtlebot_stage'
+-- ==> add_subdirectory(turtlebot_simulator/turtlebot_stage)
+-- +++ processing catkin package: 'turtlebot_stdr'
+-- ==> add_subdirectory(turtlebot_simulator/turtlebot_stdr)
+-- +++ processing catkin package: 'urdf_sim_tutorial'
+-- ==> add_subdirectory(urdf_sim_tutorial)
+-- +++ processing catkin package: 'eddy_bringup'
+-- ==> add_subdirectory(eddy/eddy_bringup)
+-- +++ processing catkin package: 'eddy_teleop'
+-- ==> add_subdirectory(eddy/eddy_teleop)
+-- +++ processing catkin package: 'jenkin_test'
+-- ==> add_subdirectory(jenkin_test)
+-- +++ processing catkin package: 'my_awesome_code'
+-- ==> add_subdirectory(my_awesome_code)
+-- +++ processing catkin package: 'data_collection'
+-- ==> add_subdirectory(eddy/eddy_utilities/data_collection)
+-- +++ processing catkin package: 'learning_tf'
+-- ==> add_subdirectory(learning_tf)
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- +++ processing catkin package: 'eddy_description'
+-- ==> add_subdirectory(eddy/eddy_description)
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ubuntu/catkin_ws/build
+####
+#### Running command: "make -j4 -l4" in "/home/ubuntu/catkin_ws/build"
+####
+Scanning dependencies of target eddy_description_xacro_generated_to_devel_space_
+Built target eddy_description_xacro_generated_to_devel_space_
+ubuntu@eddy-shore-station:~/catkin_ws$ roscd eddy_bringup
+roscd: No such package/stack 'eddy_bringup'
+ubuntu@eddy-shore-station:~/catkin_ws$ cd src
+ubuntu@eddy-shore-station:~/catkin_ws/src$ roscd eddy_bringup
+roscd: No such package/stack 'eddy_bringup'
+ubuntu@eddy-shore-station:~/catkin_ws/src$ 
